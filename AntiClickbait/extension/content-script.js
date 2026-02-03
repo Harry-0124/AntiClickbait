@@ -92,7 +92,9 @@ async function checkClickbait() {
     console.log(`Checking clickbait for ${videoId}...`);
 
     // 4. Call API
-    const res = await fetch("http://127.0.0.1:5000/predict", {
+    // http://127.0.0.1:5000/predict use this is backend is using localhost
+    // https://anticlickbait.onrender.com/predict use this if backend is using render
+    const res = await fetch("https://anticlickbait.onrender.com/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ video_id: videoId })
